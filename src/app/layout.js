@@ -1,6 +1,14 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+// config.autoAddCss = false;
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+
+library.add(faGoogle);
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
