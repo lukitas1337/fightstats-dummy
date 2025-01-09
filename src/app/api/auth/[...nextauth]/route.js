@@ -4,6 +4,7 @@ import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import clientPromise from "../mongodb.js";  // Changed this line to use relative import
 
 export const authOptions = {
+  secret: process.env.NEXTAUTH_SECRET,
   adapter: MongoDBAdapter(clientPromise),
   providers: [
     GoogleProvider({

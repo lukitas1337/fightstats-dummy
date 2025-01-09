@@ -2,6 +2,7 @@ import { getServerSession } from 'next-auth';
 import Link from 'next/link';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 import LogoutButton from './buttons/LogoutButton';
+
 export default async function Header() {
 const session = await getServerSession(authOptions);
   return (
