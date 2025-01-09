@@ -1,7 +1,11 @@
+import { get } from 'http';
+import { getServerSession } from 'next-auth';
 import Link from 'next/link';
+import { authOptions } from '../api/auth/[...nextauth]/route';
 
 export default async function Header() {
-
+const session = await getServerSession(authOptions);
+console.log(session);
   return (
     <header className='bg-white border-b py-4'>
       <div className='max-w-4xl mx-auto flex justify-between px-8'>
