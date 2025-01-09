@@ -3,9 +3,9 @@ import "./globals.css";
 import Header from "./components/Header";
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
-// config.autoAddCss = false;
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import Provider from "./providers/SessionProvider";
 
 library.add(faGoogle);
 
@@ -27,15 +27,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <main>
-        <Header />
-        <div className='max-w-4xl mx-auto p-8'>
-        {children}
-        </div>
-        </main>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Provider>
+          <main>
+            <Header />
+            <div className='max-w-4xl mx-auto p-8'>
+              {children}
+            </div>
+          </main>
+        </Provider>
       </body>
     </html>
   );
